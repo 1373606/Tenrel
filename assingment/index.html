@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Explorer </title>
+    <link rel="shortcut icon" href="data:;" type="image/x-icon">
     <link rel="stylesheet" href=style.css>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <header>  
-        <nav>
+    <header>
+        <!-- <nav>
             <h1>City Explorer </h1>
-            <div id="logo"></div>
+            <div id="logo" class="topnav"></div>
             <ul>
                 <li><a href="#">Main</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Location</a></li>
             </ul>
-        </nav>
+        </nav> -->
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active">CITY EXPLORER</a>
+            <a href="#Home">Home</a>
+            <a href="#Contact us">Contact us</a>
+            <a href="#about us">About us</a>
+            <a href="#Location">Location</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
     </header>
+
 
     <div class="search-container">
         <input type="text" id="searchInput" placeholder="Search..." />
@@ -26,9 +41,9 @@
     </div>
     <div id="results"></div>
 
-    
-      
-    
+
+
+
 
 
 
@@ -43,5 +58,16 @@
 
 
     <script src="main.js"></script>
+    <Script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </Script>
 </body>
+
 </html>
