@@ -1,0 +1,104 @@
+
+body {
+    font-size: 16px; /* Default size */
+}
+
+h1 {
+    font-size: 2.5rem; /* Scales relative to the root font size */
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Reduce font size on smaller screens */
+    }
+}
+
+
+
+
+  /* Style for the body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:baseline;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+    background-image: url('pic_trulli.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+/* Style for the search container */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style for the search input */
+.search-container input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for the search button */
+.search-container button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the results section */
+#results {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+a{
+    text-decoration: none;
+    color: red;
+}
+
+header { 
+    width: 100%;
+}
+header nav { 
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 1.2em;
+}
+
+header nav ul { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    po
+}
+
+header nav ul li {
+    list-style: none;
+    margin: 0.5em;
+}
+
+header nav ul li a {
+    font-size: 1.5em;
+    margin: 10px;
+    border: 2px solid red;
+    padding: 0.5em;
+}
