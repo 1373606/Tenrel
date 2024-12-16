@@ -22,20 +22,24 @@ function doSomethingPlease() {
 
 
 async function getData(search) {
-    console.log(search)
-    debugger
-    const url = "https://countriesnow.space/api/v0.1/countries/population";
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
-        }
+    // console.log(search)
 
-        const json = await response.json();
-        return json
-    } catch (error) {
-        console.error(error.message);
-    }
+    const url = "https://countriesnow.space/api/v0.1/countries/population";
+
+    const payload = { country: search }
+
+    return await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(payload)
+    }).then(async res => await res.json())
+        .catch(error => {
+            console.error(error.message);
+        })
+
 }
 
 
@@ -55,18 +59,16 @@ document.getElementById('searchButton').addEventListener('click', async function
 // Function to simulate a search operation
 async function performSearch(query) {
     // Simulate a list of items to search from
-    const data = getData(query)
-    const items = ['Country', 'City', 'Location', 'Population', 'Date', 'Weather', 'Flag'];
-    debugger
+    const data = await getData(query)
+    // const items = ['Country', 'City', 'Location', 'Population', 'Date', 'Weather', 'Flag'];
+    // debugger
     // Filter items based on the query
-    const results = items.filter(item =>
-        item.toLowerCase().includes(query.toLowerCase())
-    );
 
+    console.log(data)
     // Display results
     const resultsContainer = document.getElementById('results');
-    if (results.length > 0) {
-        resultsContainer.innerHTML = `<strong>Results:</strong> ${results.join(', ')}`;
+    if (data) {
+        resultsContainer.innerHTML = `<strong>Results:</strong> ${data}`;
     } else {
         resultsContainer.innerText = 'No results found.';
     }
